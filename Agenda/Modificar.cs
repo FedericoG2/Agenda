@@ -16,11 +16,11 @@ namespace Agenda
 
         private void Modificar_Load(object sender, EventArgs e)
         {
-            // Configurar el DataGridView
-            ConfigurarDataGridView();
+            //// Configurar el DataGridView
+            //ConfigurarDataGridView();
 
-            // Cargar los contactos en la grilla
-            CargarContactosEnGrilla();
+            //// Cargar los contactos en la grilla
+            //CargarContactosEnGrilla();
         }
 
         private void ConfigurarDataGridView()
@@ -167,6 +167,15 @@ namespace Agenda
 
             // Mostrar el formulario
             frmNuevo.Show();
+        }
+
+        private void Modificar_Shown(object sender, EventArgs e)
+        {
+            // Configurar el DataGridView
+            ConfigurarDataGridView();
+
+            // Cargar los contactos en la grilla
+            CargarContactosEnGrilla();
         }
     }
 }
