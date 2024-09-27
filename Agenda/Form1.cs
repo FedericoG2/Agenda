@@ -220,5 +220,14 @@ namespace Agenda
         {
             ExportarContactos();
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            // Crear una nueva instancia del formulario Modificar
+            Modificar frmModificar = new Modificar();
+
+            // Mostrar el formulario Modificar como ventana modal
+            frmModificar.Show();
+        }
     }
 }

@@ -84,6 +84,7 @@
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.Size = new System.Drawing.Size(697, 189);
             this.guna2GroupBox1.TabIndex = 19;
+            this.guna2GroupBox1.Text = "LISTA";
             // 
             // treeViewContactos
             // 
@@ -179,6 +180,7 @@
             this.btnEditar.Size = new System.Drawing.Size(115, 41);
             this.btnEditar.TabIndex = 25;
             this.btnEditar.Text = "Modificar";
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // Form1
             // 
