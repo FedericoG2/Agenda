@@ -32,13 +32,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.btnEditar = new Guna.UI2.WinForms.Guna2Button();
             this.treeViewContactos = new System.Windows.Forms.TreeView();
             this.txtBusqueda = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnBuscar = new Guna.UI2.WinForms.Guna2Button();
             this.lblResultado = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.btnExportar = new Guna.UI2.WinForms.Guna2Button();
-            this.btnEditar = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
@@ -85,6 +85,22 @@
             this.guna2GroupBox1.Size = new System.Drawing.Size(697, 189);
             this.guna2GroupBox1.TabIndex = 19;
             this.guna2GroupBox1.Text = "LISTA";
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnEditar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnEditar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnEditar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnEditar.FillColor = System.Drawing.Color.DarkSlateGray;
+            this.btnEditar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btnEditar.ForeColor = System.Drawing.Color.White;
+            this.btnEditar.Location = new System.Drawing.Point(582, 0);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(115, 41);
+            this.btnEditar.TabIndex = 25;
+            this.btnEditar.Text = "Modificar";
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // treeViewContactos
             // 
@@ -166,22 +182,6 @@
             this.btnExportar.Text = "Exportar";
             this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
             // 
-            // btnEditar
-            // 
-            this.btnEditar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnEditar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnEditar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnEditar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnEditar.FillColor = System.Drawing.Color.DarkSlateGray;
-            this.btnEditar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
-            this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(582, 0);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(115, 41);
-            this.btnEditar.TabIndex = 25;
-            this.btnEditar.Text = "Modificar";
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -198,6 +198,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Shown += new System.EventHandler(this.Form1_Shown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.guna2GroupBox1.ResumeLayout(false);

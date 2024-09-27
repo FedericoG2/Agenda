@@ -80,14 +80,72 @@ namespace Agenda
             }
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+       
+
+
+
+        private void EliminarContacto(string correo)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+
+                // Consulta para eliminar un contacto por correo
+                string query = "DELETE FROM Contactos WHERE Correo = @Correo";
+
+                using (SQLiteCommand command = new SQLiteCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Correo", correo);
+
+                    int rowsAffected = command.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show($"El contacto con correo {correo} ha sido eliminado.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se encontró el contacto para eliminar.");
+                    }
+                }
+            }
+
+            // Recargar la grilla después de eliminar el contacto
+            CargarContactosEnGrilla();
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            // Crear una nueva instancia del formulario Principal
+            Form1 frmPrincipal = new Form1();
+
+            // Ocultar el formulario actual
+            this.Hide();
+
+            // Mostrar el formulario
+            frmPrincipal.Show();
+
+        }
+
+        private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             // Si se hizo clic en el botón "Eliminar"
             if (e.ColumnIndex == dataGridView1.Columns["Eliminar"].Index && e.RowIndex >= 0)
             {
-                // Obtener el nombre del contacto a eliminar
-                string nombre = dataGridView1.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
-                MessageBox.Show($"Se eliminó el contacto: {nombre}");
+                // Obtener el correo del contacto a eliminar
+                string correo = dataGridView1.Rows[e.RowIndex].Cells["Correo"].Value.ToString();
+
+                // Mensaje de advertencia para confirmar la eliminación
+                var result = MessageBox.Show($"¿Estás seguro de que deseas eliminar el contacto con correo {correo}?",
+                                              "Advertencia",
+                                              MessageBoxButtons.YesNo,
+                                              MessageBoxIcon.Warning);
+
+                // Si el usuario confirma la eliminación
+                if (result == DialogResult.Yes)
+                {
+                    // Llamar al método para eliminar el contacto
+                    EliminarContacto(correo);
+                }
             }
 
             // Si se hizo clic en el botón "Editar"
@@ -97,6 +155,18 @@ namespace Agenda
                 string nombre = dataGridView1.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
                 MessageBox.Show($"Se editó el contacto: {nombre}");
             }
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            // Crear una nueva instancia del formulario Principal
+            Nuevo frmNuevo = new Nuevo();
+
+            // Ocultar el formulario actual
+            this.Hide();
+
+            // Mostrar el formulario
+            frmNuevo.Show();
         }
     }
 }

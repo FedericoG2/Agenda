@@ -20,7 +20,7 @@ namespace Agenda
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            CargarContactosEnTreeView();
+           // CargarContactosEnTreeView();
         }
 
         
@@ -226,8 +226,18 @@ namespace Agenda
             // Crear una nueva instancia del formulario Modificar
             Modificar frmModificar = new Modificar();
 
-            // Mostrar el formulario Modificar como ventana modal
+            // Ocultar el formulario principal
+            this.Hide();
+
+            // Mostrar el formulario Modificar
             frmModificar.Show();
+
+          
+        }
+
+        private void Form1_Shown(object sender, EventArgs e)
+        {
+            CargarContactosEnTreeView();
         }
     }
 }
