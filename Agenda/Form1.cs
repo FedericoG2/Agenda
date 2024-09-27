@@ -239,5 +239,10 @@ namespace Agenda
         {
             CargarContactosEnTreeView();
         }
+
+        private void btnRecargar_Click(object sender, EventArgs e)
+        {
+            CargarContactosEnTreeView();
+        }
     }
 }

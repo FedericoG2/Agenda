@@ -39,6 +39,7 @@
             this.lblResultado = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.btnExportar = new Guna.UI2.WinForms.Guna2Button();
+            this.btnRecargar = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
@@ -76,13 +77,14 @@
             // 
             // guna2GroupBox1
             // 
+            this.guna2GroupBox1.Controls.Add(this.btnRecargar);
             this.guna2GroupBox1.Controls.Add(this.btnEditar);
             this.guna2GroupBox1.Controls.Add(this.treeViewContactos);
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2GroupBox1.Location = new System.Drawing.Point(17, 173);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(17, 195);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.Size = new System.Drawing.Size(697, 189);
+            this.guna2GroupBox1.Size = new System.Drawing.Size(697, 167);
             this.guna2GroupBox1.TabIndex = 19;
             this.guna2GroupBox1.Text = "LISTA";
             // 
@@ -107,7 +109,7 @@
             this.treeViewContactos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeViewContactos.Location = new System.Drawing.Point(0, 40);
             this.treeViewContactos.Name = "treeViewContactos";
-            this.treeViewContactos.Size = new System.Drawing.Size(697, 149);
+            this.treeViewContactos.Size = new System.Drawing.Size(697, 127);
             this.treeViewContactos.TabIndex = 20;
             // 
             // txtBusqueda
@@ -182,6 +184,22 @@
             this.btnExportar.Text = "Exportar";
             this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
             // 
+            // btnRecargar
+            // 
+            this.btnRecargar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnRecargar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnRecargar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnRecargar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnRecargar.FillColor = System.Drawing.Color.DarkSlateGray;
+            this.btnRecargar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btnRecargar.ForeColor = System.Drawing.Color.White;
+            this.btnRecargar.Location = new System.Drawing.Point(461, 0);
+            this.btnRecargar.Name = "btnRecargar";
+            this.btnRecargar.Size = new System.Drawing.Size(115, 41);
+            this.btnRecargar.TabIndex = 28;
+            this.btnRecargar.Text = "Recargar";
+            this.btnRecargar.Click += new System.EventHandler(this.btnRecargar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -221,6 +239,7 @@
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox2;
         private Guna.UI2.WinForms.Guna2Button btnExportar;
         private Guna.UI2.WinForms.Guna2Button btnEditar;
+        private Guna.UI2.WinForms.Guna2Button btnRecargar;
     }
 }
 
